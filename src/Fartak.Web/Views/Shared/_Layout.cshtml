@@ -1,33 +1,222 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>@ViewBag.Title</title>
-    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-    <script src="@Url.Content("~/Scripts/jquery-1.5.1.min.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
+	<meta charset="utf-8" />
+	<title>@ViewBag.Title</title>
+	@Assets.CSS("prettyphoto.css")
+	@Assets.CSS("style.css")
+	@Assets.CSS("blue.css")
+	
+	@Assets.GoogleCdn()
+	@Assets.Script("custom.js")
+	@Assets.Script("jquery.easing.js")
+	@Assets.Script("jquery.prettyphoto.js")
+	<meta name="slider_speed" content="5000" />
+<script type="text/javascript">
+/* <![CDATA[ */
+jQuery.preloadImages("/Content/images/blue/home_feature.jpg","/Content/images/blue/stage.jpg","/Content/images/blue/header.jpg","/Content/images/black/slider_inactive.png","/Content/images/black/buttons.gif","/Content/images/blue/buttons.gif","/Content/images/black/slider_active.png","/Content/images/blue/drop.png","/Content/images/blue/dropR.png","/Content/images/blue/drop_sub.png");
+/* ]]> */
+</script>
+
+
+<!--[if IE 6]>
+<link rel="stylesheet" href="http://themes.mysitemyway.com/infocus_html/colors/blue/styles/ie6.css" type="text/css" media="screen" />
+<script src="http://themes.mysitemyway.com/infocus_html/colors/blue/js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script>
+	DD_belatedPNG.fix('#default_logo, .slider_frame');
+</script>
+<![endif]-->
+
 </head>
-<body>
-    <div class="page">
-        <header>
-            <div id="title">
-                <h1>My MVC Application</h1>
-            </div>
-            <div id="logindisplay">
-                @Html.Partial("_LogOnPartial")
-            </div>
-            <nav>
-                <ul id="menu">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                </ul>
-            </nav>
-        </header>
-        <section id="main">
-            @RenderBody()
-        </section>
-        <footer>
-        </footer>
-    </div>
+<body id="home_page">
+	<div id="header">
+	<div class="inner">
+		
+		<div id="logo">
+			<div id="default_logo"><a href="#"></a></div>
+		</div>
+		
+		<div id="main_navigation" class="jqueryslidemenu">
+			<ul>
+				<li><a href="./index.html">Home</a></li>
+				<li><a href="./portfolio_full.html">Portfolio</a>
+					<ul>
+						<li><a href="./portfolio_full.html">Full View</a></li>
+						<li><a href="./portfolio_gallery.html">Gallery View</a></li>
+						<li><a href="./portfolio_single.html">Single View</a></li>
+					</ul>
+				</li>
+				<li><a href="./blog.html">Blog</a>
+					<ul>
+						<li><a href="./blog.html">Blog Index</a></li>
+						<li><a href="./single.html">Blog Post</a></li>
+						<li><a href="./archives.html">Blog Archive</a></li>
+					</ul>
+				</li>
+				<li><a href="./page.html">Pages</a>
+					<ul>
+						<li><a href="./page.html">Standard Layout</a></li>
+						<li><a href="./page_fullwidth.html">Full Width</a></li>
+						<li><a href="./404.html">404 Error Page</a></li>
+						<li><a href="./2col_footer.html">Alternate Footers</a>
+							<ul>
+								<li><a href="./2col_footer.html">2 Col Footer</a></li>
+								<li><a href="./3col_footer.html">3 Col Footer</a></li>
+								<li><a href="./4col_footer.html">4 Col Footer</a></li>
+							</ul>
+						</li>
+						<li><a href="./no_intro.html">Alternate Intro Blurbs</a>
+							<ul>
+								<li><a href="./no_intro.html">No Intro</a></li>
+								<li><a href="./twitter_intro.html">Twitter Intro</a></li>
+								<li><a href="./inset_intro.html">Inset Intro</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="./styles.html">Styles</a>
+					<ul>
+						<li><a href="http://themes.mysitemyway.com/infocus_html/colors/blue/column_layouts.html">Easy Column Layouts</a></li>
+						<li><a href="./typography.html">Typography</a></li>
+						<li><a href="./styles.html">Additional Styles</a></li>
+						<li><a href="#">Color Variations</a>
+							<ul>
+								<li><a href="../black/index.html">Black</a></li>
+								<li><a href="./index.html">Blue</a></li>
+								<li><a href="../coffee/index.html">Coffee</a></li>
+								<li><a href="../../index.html">Deep Blue</a></li>
+								<li><a href="../grey/index.html">Grey</a></li>
+								<li><a href="../hotpink/index.html">Hot Pink</a></li>
+								<li><a href="../lime/index.html">Lime</a></li>
+								<li><a href="../red/index.html">Red</a></li>
+								<li><a href="../silver/index.html">Silver</a></li>
+								<li><a href="../golden/index.html">Golden</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="./contact.html">Contact</a></li>
+			</ul>
+		</div><!-- main_navigation -->
+		
+	</div><!-- inner -->
+	</div><!-- header -->
+	@RenderBody()
+	<!-- start footer -->
+
+<div id="footer">
+	<div class="background">
+		<div class="inner">
+			
+			<div class="two_third">					
+					
+				<div class="one_fourth">
+					<div class="widget link_list">
+						<h3 class="widgettitle">Recent</h3>
+						<ul>
+							<li><a href="#">Vestibulum ligula</a></li>
+							<li><a href="#">Pellentes rutrum</a></li>
+							<li><a href="#">Posuere convallis</a></li>
+							<li><a href="#">Morbi accumsan</a></li>
+							<li><a href="#">Integer id lectus</a></li>
+						</ul>
+					</div>				
+				</div><!-- one_fourth -->
+			
+			
+				<div class="one_fourth">
+					<div class="widget link_list">
+						<h3 class="widgettitle">Pages</h3>
+						<ul>
+							<li><a href="./index.html">Home</a></li>
+							<li><a href="./portfolio_full.html">Portfolio</a></li>
+							<li><a href="./blog.html">Blog</a></li>
+							<li><a href="./page.html">Pages</a></li>
+							<li><a href="./styles.html">Styles</a></li>
+							<li><a href="./contact.html">Contact</a></li>
+						</ul>
+					</div>				
+				</div><!-- one_fourth -->
+			
+			
+				<div class="one_fourth">
+					<div class="widget link_list">
+						<h3 class="widgettitle">Archives</h3>
+						<ul>
+							<li><a href="#">February 2010</a></li>
+							<li><a href="#">January 2010</a></li>
+							<li><a href="#">December 2009</a></li>
+							<li><a href="#">November 2009</a></li>
+						</ul>
+					</div>				
+				</div><!-- one_fourth -->
+			
+			
+				<div class="one_fourth last">
+					<div class="widget link_list">
+						<h3 class="widgettitle">Categories</h3>
+						<ul>
+							<li class="cat-item cat-item-3"><a title="View all posts filed under Portfolio" href="#">Portfolio</a></li>
+							<li class="cat-item cat-item-1"><a title="View all posts filed under News" href="#">News</a></li>
+							<li class="cat-item cat-item-1"><a title="View all posts filed under Recent Works" href="#">Recent Works</a></li>
+						</ul>
+					</div>
+				</div><!-- one_fourth -->
+
+			</div><!-- two_third -->
+			
+			
+			<div class="one_third last">
+				<div id="contact-form-widget" class="widget webtreats_contact_form_widget">
+					<h3 class="widgettitle">Email Us</h3>
+					
+					<!-- footer contact form -->
+					<a name="_contact"></a> 
+					<form action="#_contact" id="contactFormWidget" method="post">
+					<p>
+						<input type="text" name="contactNameWidget" id="contactNameWidget" value="" class="requiredField textfield" size="22" tabindex="5" />
+						<label class="textfield_label" for="contactNameWidget">Name *</label>
+					</p>
+					<p>
+						<input type="text" name="emailWidget" id="emailWidget" value="" class="requiredField email textfield" size="22" tabindex="6" />
+						<label class="textfield_label" for="emailWidget">Email *</label>
+					</p>
+					<p><textarea name="commentsWidget" id="commentsTextWidget" rows="20" cols="30" tabindex="7" class="requiredField textarea"></textarea></p>
+					<p class="screenReader">
+					<label for="checkingWidget" class="screenReader">do not enter anything in this field</label><input type="text" name="checkingWidget" id="checkingWidget" class="screenReader" value="" /></p>
+					<p class="loadingImgWidgetFt"></p>
+					<p><input name="submittedWidget" id="submittedWidget" class="button in_footer" tabindex="8" value="Submit" type="submit" /></p>
+					<p class="screenReader"><input id="submitUrlWidget" type="hidden" name="submitUrlWidget" value="submit/submit-footer.php" /></p>
+					</form>
+					
+				</div>				
+			</div><!-- one_third last -->
+								
+								
+			<div class="clearboth"></div>
+		</div><!-- inner -->
+	</div><!-- background -->
+</div><!-- footer -->
+
+<!-- end footer -->
+
+
+<div id="sub_footer">
+	<div class="inner">
+		<div class="one_half">© 2010 WebTreats ETC. All Rights Reserved</div>				
+			<div class="one_half last" style="text-align:right;">
+				<div id="footer_nav">
+					<ul>
+						<li><a href="./blog.html">Blog</a></li>
+						<li><a href="./contact.html">Contact</a></li>
+						<li><a href="./portfolio_full.html">Portfolio</a></li>
+						<li><a href="./styles.html">Styles</a></li>
+					</ul>
+				</div>
+			</div>
+		<div class="clearboth"></div>
+	</div><!-- inner -->							
+</div><!-- sub_footer -->
+
 </body>
 </html>

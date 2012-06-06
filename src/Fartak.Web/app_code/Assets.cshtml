@@ -1,0 +1,14 @@
+﻿@helper CSS(string cssFile, string media= "screen")
+{
+    <link rel="stylesheet" href="/Content/stylesheets/@cssFile" type="text/css" media="@media" /> 
+}
+
+@helper Script(string scriptFile)
+    {
+    <script type="text/javascript" src="/Content/javascripts/@scriptFile"></script>
+}
+
+@helper GoogleCdn()
+    {
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+}
